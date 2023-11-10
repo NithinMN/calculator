@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; background-color: black; width: 320px; margin: auto; padding:10px; border-radius: 60px;">
+
+        <h1 style="color: rgb(18, 243, 213) ; font-style: calc();"> Calculator</h1>
+        <input style="width:265px; height: 30px; margin-bottom: 30px; background-color: black;color: rgb(18, 243, 213);border: 0cap;font-size:xx-large ;text-align: end" type="text" id="display"><br>
+
+
+        <button style="background-color:rgb(18, 243, 213);color: black;" onclick="clearDisplay()">C</button>
+        <button style="background-color: rgb(18, 243, 213);color: black;" onclick="backspace()">DEL</button>
+        <button  onclick="toDisplay('/')">/</button>
+        <button onclick="toDisplay('+')">+</button>
+        <br>
+
+        <button onclick="toDisplay('1')">1</button>
+        <button onclick="toDisplay('2')">2</button>
+        <button onclick="toDisplay('3')">3</button>
+        <button onclick="toDisplay('-')">-</button>
+        <br>
+
+        <button onclick="toDisplay('4')">4</button>
+        <button onclick="toDisplay('5')">5</button>
+        <button onclick="toDisplay('6')">6</button>
+        <button onclick="toDisplay('*')">*</button>
+        <br>
+
+        <button onclick="toDisplay('7')">7</button>
+        <button onclick="toDisplay('8')">8</button>
+        <button onclick="toDisplay('9')">9</button>
+        <button onclick="toDisplay('%')">%</button>
+      
+       
+        <br>
+        <button onclick="toDisplay('0')">0</button>
+        <button onclick="toDisplay('.')">.</button>
+        <button style="width: 122px; background-color: rgb(18, 243, 213);color: black;" onclick="equal()">=</button>
+        
+    
+        
+
+        
+    
+    </div>
+</body>
+<script>
+
+function toDisplay(value){
+       
+    document.getElementById('display').value+=value
+    
+    }
+
+function clearDisplay(){
+    document.getElementById('display').value=""
+}
+
+function backspace(){
+    let re=document.getElementById('display').value
+    let result=re.slice(0,-1)
+    document.getElementById('display').value=result
+}
+
+function equal(){
+    try{
+    const result=eval(document.getElementById('display').value)
+    document.getElementById('display').value=(result)
+    } catch{
+        document.getElementById('display').value='Error'
+    }
+    
+}
+</script>
+
+
+
+
+<style>
+
+    button{
+        width: 55px;
+        height: 55px;
+        border-radius: 20px;
+        border: 0cap;
+        margin: 5px;
+        background-color: black;
+        color: rgb(18, 243, 213);
+        font-style: inherit;
+        font-size: larger;
+        font-weight: 100;
+        box-shadow: 1px 1px 5px rgb(18, 243, 213);
+        
+    }
+    button:hover{
+        background-color: grey;
+        
+    }
+    
+    
+    
+</style>
+</html>
